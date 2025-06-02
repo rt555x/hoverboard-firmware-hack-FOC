@@ -347,7 +347,11 @@ int main(void) {
         cmdR = speed;
       #else 
         // ####### MIXER #######
-        mixerFcn(speed << 4, steer << 4, &cmdR, &cmdL);   // This function implements the equations above
+        #if defined(RC_CAR_STEERING)
+          mixerFcnRcCar(speed << 4, steer << 4, &cmdR, &cmdL);   // This function implements the equations above
+        #else
+          mixerFcn(speed << 4, steer << 4, &cmdR, &cmdL);   // This function implements the equations above
+        #endif
       #endif
 
 

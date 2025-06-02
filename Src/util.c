@@ -1719,7 +1719,7 @@ void mixerFcnRcCar(int16_t rtu_speed, int16_t rtu_steer, int16_t *rty_speedR, in
     if (prodSpeed >= 0){
       tmp = prodSpeed - prodSteer;               // Forward: unchanged
       } else {                                   // Reverse: inverterd forward drive
-        tmp = -1 * ( -1 * prodSpeed - prodSteer) 
+        tmp = -1 * ( -1 * prodSpeed - prodSteer);
       }
 
     tmp         = CLAMP(tmp, -32768, 32767);  // Overflow protection
@@ -1729,7 +1729,7 @@ void mixerFcnRcCar(int16_t rtu_speed, int16_t rtu_steer, int16_t *rty_speedR, in
     if (prodSpeed >= 0){
       tmp = prodSpeed + prodSteer;               // Forward: unchanged
       } else {                                   // Reverse: inverterd forward drive
-        tmp = -1 * ( -1 * prodSpeed + prodSteer) 
+        tmp = -1 * ( -1 * prodSpeed + prodSteer);
       }
 
     tmp         = CLAMP(tmp, -32768, 32767);  // Overflow protection
